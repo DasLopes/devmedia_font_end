@@ -29,7 +29,7 @@ public class Categoria {
 
     }
 
-    public Categoria(Integer id, String descricao, List<Atividade> atividades) {
+    public Categoria(List<Atividade> atividades, Integer id, String descricao) {
         this.id = id;
         this.descricao = descricao;
         this.atividades = atividades;
@@ -54,5 +54,4 @@ public class Categoria {
     public List<Atividade> getAtividades() {
         return atividades;
     }
-
 }

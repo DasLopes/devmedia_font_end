@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_bloco")
-public class Bloco {    
+public class Bloco {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,10 +29,10 @@ public class Bloco {
     private Atividade atividade;
 
     public Bloco() {
-        
+
     }
 
-    public Bloco(Integer id, Instant inicio, Instant fim, Atividade atividade) {
+    public Bloco(Atividade atividade, Integer id, Instant inicio, Instant fim) {
         this.id = id;
         this.inicio = inicio;
         this.fim = fim;
@@ -71,5 +71,4 @@ public class Bloco {
         this.atividade = atividade;
     }
 
-    
 }

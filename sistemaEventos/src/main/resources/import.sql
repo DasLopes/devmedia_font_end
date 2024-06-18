@@ -6,16 +6,16 @@ INSERT INTO tb_participante (nome, email) VALUES ('Tiago Faria', 'tiago@gmail.co
 INSERT INTO tb_participante (nome, email) VALUES ('Maria do Rosario', 'maria@gmail.com');
 INSERT INTO tb_participante (nome, email) VALUES ('Teresa Silva', 'teresa@gmail.com');
 
-INSERT INTO tb_atividade (nome, descricao, preco) VALUES ('Curso de HTML', 'Aprenda HTML de forma prática', 80.0);
-INSERT INTO tb_atividade (nome, descricao, preco) VALUES ('Oficina de Github', 'Controle versões de seus projetos', 50.0);
+INSERT INTO tb_atividade (nome, descricao, preco, categoria_id) VALUES ('Curso de HTML', 'Aprenda HTML de forma prática', 80.0, 1);
+INSERT INTO tb_atividade (nome, descricao, preco, categoria_id) VALUES ('Oficina de Github', 'Controle versões de seus projetos', 50.0, 2);
 
-INSERT INTO tb_bloco (inicio, fim) VALUES ('2017-09-25T08:00:00Z', '2017-09-25T11:00:00Z');
-INSERT INTO tb_bloco (inicio, fim) VALUES ('2017-09-25T14:00:00Z', '2017-09-25T18:00:00Z');
-INSERT INTO tb_bloco (inicio, fim) VALUES ('2017-09-26T08:00:00Z', '2017-09-26T11:00:00Z');
+INSERT INTO tb_bloco (inicio, fim, atividade_id) VALUES (TIMESTAMP WITH TIME ZONE '2017-09-25T08:00:00Z', TIMESTAMP WITH TIME ZONE '2017-09-25T11:00:00Z', 1);
+INSERT INTO tb_bloco (inicio, fim, atividade_id) VALUES (TIMESTAMP WITH TIME ZONE '2017-09-25T14:00:00Z', TIMESTAMP WITH TIME ZONE '2017-09-25T18:00:00Z', 2);
+INSERT INTO tb_bloco (inicio, fim, atividade_id) VALUES (TIMESTAMP WITH TIME ZONE '2017-09-26T08:00:00Z', TIMESTAMP WITH TIME ZONE '2017-09-26T11:00:00Z', 2);
 
-INSERT INTO tb_atividade_participante (participante_id, atividade_id) VALUES (01, 01);
-INSERT INTO tb_atividade_participante (participante_id, atividade_id) VALUES (01, 02);
-INSERT INTO tb_atividade_participante (participante_id, atividade_id) VALUES (02, 01);
-INSERT INTO tb_atividade_participante (participante_id, atividade_id) VALUES (03, 01);
-INSERT INTO tb_atividade_participante (participante_id, atividade_id) VALUES (03, 02);
-INSERT INTO tb_atividade_participante (participante_id, atividade_id) VALUES (04, 02);
+INSERT INTO tb_participante_atividade (atividade_id, participante_id) VALUES (1, 1)
+INSERT INTO tb_participante_atividade (atividade_id, participante_id) VALUES (1, 2)
+INSERT INTO tb_participante_atividade (atividade_id, participante_id) VALUES (1, 3)
+INSERT INTO tb_participante_atividade (atividade_id, participante_id) VALUES (2, 1)
+INSERT INTO tb_participante_atividade (atividade_id, participante_id) VALUES (2, 3)
+INSERT INTO tb_participante_atividade (atividade_id, participante_id) VALUES (2, 4)
